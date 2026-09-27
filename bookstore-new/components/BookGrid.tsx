@@ -54,34 +54,56 @@ export function BookGrid({ books, onPressBook }: { books: Book[]; onPressBook: (
 
 const styles = StyleSheet.create({
   grid: {
-    flexDirection: "row", // các item chảy theo hàng ngang...
-    flexWrap: "wrap", // ...rồi tự xuống hàng khi hết chỗ -> tạo thành lưới
+    flexDirection: "row",
+    flexWrap: "wrap",
+    paddingHorizontal: 12,
+    paddingTop: 12,
   },
+
   item: {
-    marginBottom: 16, // khoảng cách giữa các HÀNG trong lưới
+    marginBottom: 20,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 12,
+    padding: 8,
+
+    // tạo cảm giác card
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
+    elevation: 3,
   },
+
   coverWrap: {
-    position: "relative", // containing block cho DiscountBadge absolute bên trong
+    position: "relative",
     width: "100%",
-    aspectRatio: 3 / 4, // giữ tỉ lệ ảnh dù width co giãn theo %, không dùng height cố định
+    aspectRatio: 3 / 4,
     borderRadius: 8,
     overflow: "hidden",
     backgroundColor: "#EEF2F7",
   },
+
   cover: {
     width: "100%",
     height: "100%",
+    resizeMode: "cover",
   },
+
   title: {
-    marginTop: 6,
-    fontSize: 13,
+    marginTop: 8,
+    fontSize: 14,
     fontWeight: "600",
+    lineHeight: 20,
     color: "#111827",
   },
+
   price: {
-    marginTop: 2,
-    fontSize: 13,
+    marginTop: 4,
+    fontSize: 15,
     fontWeight: "700",
-    color: "#1E1B4B",
+    color: "#4F46E5",
   },
 });
